@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Customize · Django project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/bootstrap.min.js">
+    </script>
+  </head>
+
+  <body data-spy="scroll" data-target=".left-sidebar">
+
+    <header class="jumbotron subhead">
+      <div class="container">
+        <h1>Django Projects</h1>
+        <p class="lead">Customize your Django project.
+      </div>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <div class="span3">
+        <div class="span2">
+          <ul class="nav nav-list btn-group btn-group-vertical">
+            <li><a href="#overview" class="btn btn-primary"><i class="icon-chevron-right"></i> Overview</a></li>
+            <li><a href="#apps" class="btn btn-primary"><i class="icon-chevron-right"></i> Common Apps</a></li>
+            <li><a href="#test" class="btn btn-primary"><i class="icon-chevron-right"></i>Test Tools</a></li>
+            <li><a href="#deploy" class="btn btn-primary"><i class="icon-chevron-right"></i>Deployment tools</a></li>
+            <li><a href="#build" class="btn btn-primary"><i class="icon-chevron-right"></i>Build tools</a></li>
+
+          </ul>
+        </div>
+
+      </div>
+    
+      <div class="span9">
+        <section id="overview">
+          <p>Select the apps your project should continue and we will create a project template with the correct settings, requirements.txt and project structure</p>
+        </section>
+
+        <section id="apps">
+          <div class="row">
+            <h1>Choose from common apps</h1>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="django-debug-toolbar">Debug toolbar</label>
+              <label class="checkbox"><input checked="checked" type="checkbox" value="django-debug-toolbar">Debug toolbar</label>
+              <label class="checkbox"><input checked="checked" type="checkbox" value="django-debug-toolbar">Debug toolbar</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Crispy forms</label>
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Crispy forms</label>
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Crispy forms</label>
+
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="merchant">Merchant</label>
+              <label class="checkbox"><input checked="checked" type="checkbox" value="parsley">Parsley</label>
+            </div>
+          </div>
+        </section>
+
+        <section id="test">
+          <div class="row">
+            <h1>Testing tools</h1>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Nose</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Factory-boy</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Django-coverage</label>
+            </div>
+          </div>
+        </section>
+
+        <section id="deploy">
+          <div class="row">
+            <h1>deployment tools</h1>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Fabric</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Salt</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Ansible</label>
+            </div>
+          </div>
+        </section>
+        <section id="build">
+          <div class="row">
+            <h1>Build tools</h1>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Jenkins</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Travis</label>
+            </div>
+            <div class="span3">
+              <label class="checkbox"><input checked="checked" type="checkbox" value="">Circle-ci</label>
+            </div>
+          </div>
+        </section>
+
+        <input type="submit" value="Get the project" class="btn btn-large btn-primary" />
+      </div>
+      
+    </div>
+
+
+  </div>
+
+  </body>
+
+</html>
