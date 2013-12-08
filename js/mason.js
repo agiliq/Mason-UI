@@ -29,7 +29,8 @@ $(document).ready(function(){
     var common = ["Database", "Admin", "South"],
         forms = ["crispy-forms", "parsley", "uni-form"],
         testing = ["nose", "coverage", "milkman"],
-        deployment = ["farbic", "salt", "ainsible"];
+        deployment = ["farbic", "salt", "ainsible"],
+        build = ["jenkins", "travis", "circle-ci"];
     _.templateSettings = {
       interpolate : /\{\{(.+?)\}\}/g
     };
@@ -49,6 +50,10 @@ $(document).ready(function(){
 
     _(deployment).each(function(appName){
         $("#deployment").append(appTmpl({appName: appName}));
+    });
+
+    _(build).each(function(appName){
+        $("#build").append(appTmpl({appName: appName}));
     });
 
 
