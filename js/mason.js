@@ -77,4 +77,16 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
+    $(document).on("click touchstart", "a.select-default", function(e){
+        var appType = $(this).closest(".row").data("name");
+        var apps = _.find(allApps, function(el){
+          return el[0]===appType
+        });
+        $("#"+appType).html("");
+        _(apps[1]).each(function(app){
+            $("#"+appType).append(appTmpl({app: app}));
+        });
+        e.preventDefault();
+    });
+
 });
