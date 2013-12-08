@@ -2,17 +2,39 @@ $(document).ready(function(){
     "use strict";
 
     var allApps = [
-            ["common", ["Database", "Admin", "South"]],
-            ["forms", ["crispy-forms", "parsley", "uni-form"]],
-            ["testing", ["nose", "coverage", "milkman"]],
-            ["deployment", ["farbic", "salt", "ainsible"]],
-            ["build", ["jenkins", "travis", "circle-ci"]],
-            ["admin", ["Grapelli", "admin2"]],
-            ["debug", ["ipdb", "debug_toolbar", "sentry", "django_extensions"]],
-            ["api", ["piston", "tastypie", "rest_framework"]],
-            ["auth", ["guardian", "userena", "secure_login", "social_auth"]],
-            ["cms", ["django_cms", "fein_cms", "mezzanine"]],
-            ["misc", ["merchant", "disqus",]],
+            ["common", [{name: "Database"},
+                        {name: "Admin"},
+                        {name: "South"}]],
+            ["forms", [{name: "crispy-forms"},
+                       {name: "parsley"},
+                       {name: "uni-form"}]],
+            ["testing", [{name: "nose"},
+                        {name: "coverage"},
+                        {name: "milkman"}]],
+            ["deployment", [{name: "farbic"},
+                            {name: "salt"},
+                            {name: "ainsible"}]],
+            ["build", [{name: "jenkins"},
+                       {name: "travis"},
+                       {name: "circle-ci"}]],
+            ["admin", [{name: "Grapelli"},
+                       {name: "admin2"}]],
+            ["debug", [{name: "ipdb"},
+                      {name: "debug_toolbar"},
+                      {name: "sentry"},
+                      {name: "django_extensions"}]],
+            ["api", [{name: "piston"},
+                    {name: "tastypie"},
+                    {name: "rest_framework"}]],
+            ["auth", [{name: "guardian"},
+                      {name: "userena"},
+                      {name: "secure_login"},
+                      {name: "social_auth"}]],
+            ["cms", [{name: "django_cms"},
+                     {name: "fein_cms"},
+                     {name: "mezzanine"}]],
+            ["misc", [{name: "merchant"},
+                      {name: "disqus"},]],
 
         ];
 
@@ -29,9 +51,10 @@ $(document).ready(function(){
             apps = appList[1];
         $("#top-nav").append(linkTmpl({appType: appType}));
         $("#mason-form").append(appTypeTmpl({appType: appType}));
-        _(apps).each(function(appName){
-            $("#"+appType).append(appTmpl({appName: appName}));
+        _(apps).each(function(app){
+            $("#"+appType).append(appTmpl({app: app}));
         });
     });
+    $(document).foundation().foundation('topbar');;
 
 });
