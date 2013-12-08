@@ -14,17 +14,15 @@ $(document).ready(function(){
             ["cms", ["django_cms", "fein_cms", "mezzanine"]],
             ["misc", ["merchant", "disqus",]],
 
-        ]
-
-    var appTypes = ["common", "forms", "testing", "deployment", "build"]
+        ];
 
     //This gets us django style vars in _.js templates
     _.templateSettings = {
       interpolate : /\{\{(.+?)\}\}/g
     };
-    var appTmpl = _.template('<label class="checkbox"><input checked="checked" type="checkbox" value="{{ appName }}">{{ appName }}</label>')
+    var appTmpl = _.template('<div><input checked="checked" type="checkbox" value="{{ appName }}" name="app" id="id_{{ appName }}"><label class="checkbox" for="id_{{ appName }}">{{ appName }}</label></div>');
     var linkTmpl = _.template('<li><a href="#{{ appType }}" class="btn"><i class="icon-chevron-right"></i>{{ appType }}</a></li>');
-    var appTypeTmpl = _.template('<h2>{{ appType }}</h2><section id="{{ appType }}" class="row"><a name="#{{ appType }}"></a></section>');
+    var appTypeTmpl = _.template('<section id="{{ appType }}" class="row"><h2>{{ appType }}</h2><a name="#{{ appType }}"></a></section>');
 
     _(allApps).each(function(appList){
         var appType = appList[0],
