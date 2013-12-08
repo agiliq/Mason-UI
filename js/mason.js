@@ -82,11 +82,14 @@ $(document).ready(function(){
         var apps = _.find(allApps, function(el){
           return el[0]===appType
         });
-        $("#"+appType).html("");
+        $("#"+appType).html("<h1>"+appType+"</h1>");
         _(apps[1]).each(function(app){
             $("#"+appType).append(appTmpl({app: app}));
         });
         e.preventDefault();
     });
 
+    $(document).on("click touchstart", "a.get-download", function(e){
+        $(this).closest("form").submit();
+    });
 });
