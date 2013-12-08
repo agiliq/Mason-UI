@@ -26,35 +26,31 @@ $(document).ready(function(){
     crispy-forms ✓
     */
 
-    var common = ["Database", "Admin", "South"],
-        forms = ["crispy-forms", "parsley", "uni-form"],
-        testing = ["nose", "coverage", "milkman"],
-        deployment = ["farbic", "salt", "ainsible"],
-        build = ["jenkins", "travis", "circle-ci"];
+
+    var allApps = [
+            ["common", ["Database", "Admin", "South"]],
+            ["forms", ["crispy-forms", "parsley", "uni-form"]],
+            ["testing", ["nose", "coverage", "milkman"]],
+            ["deployment", ["farbic", "salt", "ainsible"]],
+            ["build", ["jenkins", "travis", "circle-ci"]]
+        ]
+
+    var appTypes = ["common", "forms", "testing", "deployment", "build"]
+
+    //This gets us django style vars in _.js templates
     _.templateSettings = {
       interpolate : /\{\{(.+?)\}\}/g
     };
     var appTmpl = _.template('<label class="checkbox"><input checked="checked" type="checkbox" value="{{ appName }}">{{ appName }}</label>')
+    var linkTmpl = _.template('<li><a href="#{{ appType }}" class="btn"><i class="icon-chevron-right"></i>{{ appType }}</a></li>');
 
-    _(common).each(function(appName){
-        $("#common").append(appTmpl({appName: appName}));
+    _(allApps).each(function(appList){
+        var appType = appList[0],
+            apps = appList[1];
+        $("#top-nav").append(linkTmpl({appType: appType}));
+        _(apps).each(function(appName){
+            $("#"+appType).append(appTmpl({appName: appName}));
+        });
     });
-
-    _(forms).each(function(appName){
-        $("#forms").append(appTmpl({appName: appName}));
-    });
-
-    _(testing).each(function(appName){
-        $("#testing").append(appTmpl({appName: appName}));
-    });
-
-    _(deployment).each(function(appName){
-        $("#deployment").append(appTmpl({appName: appName}));
-    });
-
-    _(build).each(function(appName){
-        $("#build").append(appTmpl({appName: appName}));
-    });
-
 
 });
