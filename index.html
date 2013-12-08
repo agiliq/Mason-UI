@@ -16,8 +16,9 @@
 
     <script type="text/html" id="appTmpl">
         <div>
-            <input checked="checked" type="checkbox" value="{{ app.name }}" name="app" id="id_{{ app.name }}">
+            <input {% if(app.checked){ %}checked="checked"{% } %} type="checkbox" value="{{ app.name }}" name="app" id="id_{{ app.name }}">
             <label class="checkbox" for="id_{{ app.name }}">{{ app.name }}</label>
+            {% console.log(app) %}
         </div>
     </script>
 
@@ -29,39 +30,63 @@
 
     <script type="text/template" id="appTypeTmpl">
         <section id="{{ appType }}" class="row">
-            <h2>{{ appType }}</h2><a name="#{{ appType }}">
+            <h2>{{ appType }}
+            </h2>
+            <a name="#{{ appType }}">
             </a>
         </section>
-    </script>
+        <div class="button-bar">
+            <ul class="button-group radius">
+                <li><a href="#" class="select-all button tiny">all</a></li>
+                <li><a href="#" class="select-default button tiny">default</a></li>
+                <li><a href="#" class="select-none button tiny">none</a></li>
+            </ul>
 
-    <header>
-        <div class="row">
-            <h1>Django Mason
-            <small>Customize your Django starter project.</small>
-            </h1>
+            <ul class="button-group radius">
+                <li><a href="#top" class="button tiny">top</a></li>
+                <li><a href="#" class="get-download button tiny">download</a></li>
+            </ul>
         </div>
-    </header>
 
-    <div class="contain-to-grid sticky">
-        <nav class="top-bar">
-            <section class="top-bar-section left">
-                <ul class="nav" id="top-nav">
+    </script>
+    <div class="row">
+        <div class="column">
+             <header>
+                <div class="row">
+                    <h1>Django Mason
+                    <small>Customize your Django starter project.</small>
+                    </h1>
+                </div>
+            </header>
 
-                </ul>
-            </section>
-        </nav>
+            <div class="contain-to-grid sticky">
+                <nav class="top-bar">
+                    <section class="top-bar-section left">
+                        <ul class="nav" id="top-nav">
+
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column small-2"></div>
+        <div class="column small-8">
+
+            <div class="row">
+                <section id="overview">
+                  <p>Select the apps your project should contain and we will create a project template with the correct settings, requirements.txt and project structure</p>
+                </section>
+                <a name="top"></a>
+                <form id="mason-form">
+                    <input type="submit" value="Get the project" class="button large radius" />
+                </form>
+            </div>
+        </div>
+        <div class="column small-2"></div>
     </div>
 
-    <div class="span9">
-        <section id="overview">
-          <p>Select the apps your project should contain and we will create a project template with the correct settings, requirements.txt and project structure</p>
-        </section>
-
-        <form id="mason-form">
-            <input type="submit" value="Get the project" class="button large" />
-        </form>
-
-    </div>
 
     <script type="text/javascript" src="js/modernizr.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>

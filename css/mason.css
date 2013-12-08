@@ -1,7 +1,9 @@
 label{
     font-size: 1.5em;
 }
-
+.apps-meta{
+    display: inline;
+}
 input[type=checkbox]
 {
   /* Double-sized Checkboxes */

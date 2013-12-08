@@ -2,25 +2,36 @@ $(document).ready(function(){
     "use strict";
 
     var allApps = [
-            ["common", [{name: "Database"},
-                        {name: "Admin"},
-                        {name: "South"}]],
-            ["forms", [{name: "crispy-forms"},
-                       {name: "parsley"},
+            ["common", [{name: "Database",
+                        checked: true},
+                        {name: "Admin",
+                        checked: true},
+                        {name: "South",
+                        checked: true}]],
+            ["forms", [{name: "crispy-forms",
+                        checked: true},
+                       {name: "parsley",
+                        checked: true},
                        {name: "uni-form"}]],
-            ["testing", [{name: "nose"},
-                        {name: "coverage"},
+            ["testing", [{name: "nose",
+                          checked: true},
+                        {name: "coverage",
+                         checked: true},
                         {name: "milkman"}]],
-            ["deployment", [{name: "farbic"},
+            ["deployment", [{name: "farbic",
+                             checked: true},
                             {name: "salt"},
                             {name: "ainsible"}]],
             ["build", [{name: "jenkins"},
-                       {name: "travis"},
+                       {name: "travis",
+                        checked: true},
                        {name: "circle-ci"}]],
             ["admin", [{name: "Grapelli"},
                        {name: "admin2"}]],
-            ["debug", [{name: "ipdb"},
-                      {name: "debug_toolbar"},
+            ["debug", [{name: "ipdb",
+                        checked: true},
+                      {name: "debug_toolbar",
+                       checked: true},
                       {name: "sentry"},
                       {name: "django_extensions"}]],
             ["api", [{name: "piston"},
@@ -40,7 +51,8 @@ $(document).ready(function(){
 
     //This gets us django style vars in _.js templates
     _.templateSettings = {
-      interpolate : /\{\{(.+?)\}\}/g
+      interpolate: /\{\{(.+?)\}\}/g,
+      evaluate: /\{\%(.+?)\%\}/g,
     };
     var appTmpl = _.template($("#appTmpl").html());
     var linkTmpl = _.template($("#linkTmpl").html());
@@ -55,6 +67,14 @@ $(document).ready(function(){
             $("#"+appType).append(appTmpl({app: app}));
         });
     });
-    $(document).foundation().foundation('topbar');;
+    $(document).foundation().foundation('topbar');
+    $(document).on("click touchstart", "a.select-none", function(e){
+        $(this).closest(".row").find("input[type=checkbox]").prop("checked", false);
+        e.preventDefault();
+    });
+    $(document).on("click touchstart", "a.select-all", function(e){
+        $(this).closest(".row").find("input[type=checkbox]").prop("checked", true);
+        e.preventDefault();
+    });
 
 });
