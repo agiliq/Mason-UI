@@ -1,31 +1,5 @@
 $(document).ready(function(){
-    "use strict"
-    /*
-    Database ✓
-    Admin ✓
-    South ✓
-    Django Debug Toolbar ✓
-    Fabric ✓
-    Sentry ✓
-    Parsley ✓
-    Travis ✓
-    Merchant
-    Nose
-    Piston
-    Tastypie
-    Rest-framework
-    Userena
-    Guardian
-    Django-CMS
-    Fein-CMS
-    Mezzanine
-    Disqus ✓
-    Django-Extensions
-    Grapelli ✓
-    uni-form
-    crispy-forms ✓
-    */
-
+    "use strict";
 
     var allApps = [
             ["common", ["Database", "Admin", "South"]],
@@ -36,7 +10,9 @@ $(document).ready(function(){
             ["admin", ["Grapelli", "admin2"]],
             ["debug", ["ipdb", "debug_toolbar", "sentry", "django_extensions"]],
             ["api", ["piston", "tastypie", "rest_framework"]],
-            ["auth", ["guardian", "userena", "secure_login"]]
+            ["auth", ["guardian", "userena", "secure_login", "social_auth"]],
+            ["cms", ["django_cms", "fein_cms", "mezzanine"]],
+            ["misc", ["merchant", "disqus",]],
 
         ]
 
