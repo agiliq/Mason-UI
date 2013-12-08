@@ -14,6 +14,26 @@
 
   <body class="row">
 
+    <script type="text/html" id="appTmpl">
+        <div>
+            <input checked="checked" type="checkbox" value="{{ appName }}" name="app" id="id_{{ appName }}">
+            <label class="checkbox" for="id_{{ appName }}">{{ appName }}</label>
+        </div>
+    </script>
+
+    <script type="text/template" id="linkTmpl">
+        <li>
+            <a href="#{{ appType }}" class="btn">{{ appType }}</a>
+        </li>
+    </script>
+
+    <script type="text/template" id="appTypeTmpl">
+        <section id="{{ appType }}" class="row">
+            <h2>{{ appType }}</h2><a name="#{{ appType }}">
+            </a>
+        </section>
+    </script>
+
     <header>
         <div class="row">
             <h1>Django Mason

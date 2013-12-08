@@ -20,9 +20,9 @@ $(document).ready(function(){
     _.templateSettings = {
       interpolate : /\{\{(.+?)\}\}/g
     };
-    var appTmpl = _.template('<div><input checked="checked" type="checkbox" value="{{ appName }}" name="app" id="id_{{ appName }}"><label class="checkbox" for="id_{{ appName }}">{{ appName }}</label></div>');
-    var linkTmpl = _.template('<li><a href="#{{ appType }}" class="btn"><i class="icon-chevron-right"></i>{{ appType }}</a></li>');
-    var appTypeTmpl = _.template('<section id="{{ appType }}" class="row"><h2>{{ appType }}</h2><a name="#{{ appType }}"></a></section>');
+    var appTmpl = _.template($("#appTmpl").html());
+    var linkTmpl = _.template($("#linkTmpl").html());
+    var appTypeTmpl = _.template($("#appTypeTmpl").html());
 
     _(allApps).each(function(appList){
         var appType = appList[0],
