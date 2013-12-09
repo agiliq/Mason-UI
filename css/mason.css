@@ -16,3 +16,7 @@ input[type=checkbox]
 h1, h2{
     text-transform: uppercase;
 }
+footer small{
+    display: block;
+    text-align: center;
+}
