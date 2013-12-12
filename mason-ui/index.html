@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Django Mason | Customize your Django project </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="stylesheets/app.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <script type="text/html" id="appTmpl">
+        <div>
+            <input {% if(app.checked){ %}checked="checked"{% } %} type="checkbox" value="{{ app.name }}" name="app" id="id_{{ app.name }}">
+            <label class="checkbox" for="id_{{ app.name }}">{{ app.name }}</label>
+            {% console.log(app) %}
+        </div>
+    </script>
+
+    <script type="text/template" id="linkTmpl">
+        <li>
+            <a href="#{{ appType }}" class="btn">{{ appType }}</a>
+        </li>
+    </script>
+
+    <script type="text/template" id="appTypeTmpl">
+    <div class="panel" data-name={{ appType }}>
+        <section id="{{ appType }}">
+            <h2>{{ appType }}
+            </h2>
+            <a name="#{{ appType }}">
+            </a>
+        </section>
+        <div class="button-bar">
+            <ul class="button-group radius">
+                <li><a href="#" class="select-all button tiny">all</a></li>
+                <li><a href="#" class="select-default button tiny">default</a></li>
+                <li><a href="#" class="select-none button tiny">none</a></li>
+            </ul>
+
+            <ul class="button-group radius">
+                <li><a href="#overview" class="button tiny">top</a></li>
+                <li><a href="#" class="get-download button tiny">download</a></li>
+            </ul>
+        </div>
+    </div>
+    </script>
+    <div class="row">
+        <div class="columns large-1">&nbsp;</div>
+        <div class="columns large-10">
+            <header>
+                <h1>Django Mason
+                </h1>
+                <h2>
+                    <small>Customize Django starter project.</small>
+                </h2>
+            </header>
+
+            <div class="contain-to-grid sticky">
+                <nav class="top-bar" data-topbar>
+                    <ul class="title-area">
+                        <li class="name">
+                          <h1><a href="#">Go To</a></h1>
+                        </li>
+                        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+                    </ul>
+                    <section class="top-bar-section left">
+                        <ul class="nav" id="top-nav">
+
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+
+            <section id="overview">
+              <p>Select the apps your project should contain and we will create a project template with the correct settings, requirements.txt and project structure</p>
+            </section>
+            <form id="mason-form">
+                <input type="submit" value="Get the project" class="button large radius" />
+            </form>
+        </div>
+        <div class="columns large-1">&nbsp;</div>
+    </div>
+
+    <footer>
+        <div class="row">
+            <div class="columns large-12">
+                <small>built by <a href="http://agiliq.com/">Agiliq</a></small>
+            </div>
+        </div>
+    </footer>
+
+
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/mason.js"></script>
+  </body>
+
+</html>

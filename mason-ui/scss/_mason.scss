@@ -1,0 +1,25 @@
+label{
+    font-size: 1.5em;
+}
+.apps-meta{
+    display: inline;
+}
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -o-transform: scale(1.5); /* Opera */
+  padding: 10px;
+}
+h1, h2{
+    text-transform: uppercase;
+}
+header h1, header h2{
+  display: inline;
+}
+footer small{
+    display: block;
+    text-align: center;
+}
